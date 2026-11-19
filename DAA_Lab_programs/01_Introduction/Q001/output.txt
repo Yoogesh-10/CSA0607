@@ -1,0 +1,2 @@
+Input: ['abc', 'car', 'ada', 'racecar', 'cool']
+First palindrome: ada
