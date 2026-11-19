@@ -1,0 +1,1 @@
+Permutations: ['ABC', 'ACB', 'BAC', 'BCA', 'CAB', 'CBA']
