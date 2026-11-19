@@ -1,0 +1,2 @@
+[[19, 22], [43, 50]]
+Classical multiplication complexity: O(n^3)
