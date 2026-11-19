@@ -1,0 +1,1 @@
+Solutions for 4 queens: 2 [[1, 3, 0, 2], [2, 0, 3, 1]]
