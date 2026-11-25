@@ -1,0 +1,154 @@
+INPUT width=16; words=['Dynamic', 'programming', 'creates', 'optimal', 'document', 'layouts', 'with', 'balanced', 'line', 'spacing']
+DP states (dp[i] = minimum penalty from word i to end):
+  dp[0]=116
+  dp[1]=35
+  dp[2]=10
+  dp[3]=25
+  dp[4]=9
+  dp[5]=25
+  dp[6]=9
+  dp[7]=9
+  dp[8]=0
+  dp[9]=0
+  dp[10]=0
+Candidate transitions (i,j,used,slack,linePenalty,tail,candidate):
+  (9, 9, 7, 9, 0, 0, 0)
+  (8, 8, 4, 12, 144, 0, 144)
+  (8, 9, 12, 4, 0, 0, 0)
+  (7, 7, 8, 8, 64, 0, 64)
+  (7, 8, 13, 3, 9, 0, 9)
+  (6, 6, 4, 12, 144, 9, 153)
+  (6, 7, 13, 3, 9, 0, 9)
+  (5, 5, 7, 9, 81, 9, 90)
+  (5, 6, 12, 4, 16, 9, 25)
+  (4, 4, 8, 8, 64, 25, 89)
+  (4, 5, 16, 0, 0, 9, 9)
+  (3, 3, 7, 9, 81, 9, 90)
+  (3, 4, 16, 0, 0, 25, 25)
+  (2, 2, 7, 9, 81, 25, 106)
+  (2, 3, 15, 1, 1, 9, 10)
+  (1, 1, 11, 5, 25, 10, 35)
+  (0, 0, 7, 9, 81, 35, 116)
+Chosen lines:
+  Line 1: Dynamic | unused=9 | penalty=81
+  Line 2: programming | unused=5 | penalty=25
+  Line 3: creates optimal | unused=1 | penalty=1
+  Line 4: document layouts | unused=0 | penalty=0
+  Line 5: with balanced | unused=3 | penalty=9
+  Line 6: line spacing | unused=4 | penalty=0
+Minimum total penalty: 116
+------------------------------------------------------------
+INPUT width=22; words=['Dynamic', 'programming', 'creates', 'optimal', 'document', 'layouts', 'with', 'balanced', 'line', 'spacing']
+DP states (dp[i] = minimum penalty from word i to end):
+  dp[0]=59
+  dp[1]=46
+  dp[2]=50
+  dp[3]=37
+  dp[4]=1
+  dp[5]=1
+  dp[6]=16
+  dp[7]=0
+  dp[8]=0
+  dp[9]=0
+  dp[10]=0
+Candidate transitions (i,j,used,slack,linePenalty,tail,candidate):
+  (9, 9, 7, 15, 0, 0, 0)
+  (8, 8, 4, 18, 324, 0, 324)
+  (8, 9, 12, 10, 0, 0, 0)
+  (7, 7, 8, 14, 196, 0, 196)
+  (7, 8, 13, 9, 81, 0, 81)
+  (7, 9, 21, 1, 0, 0, 0)
+  (6, 6, 4, 18, 324, 0, 324)
+  (6, 7, 13, 9, 81, 0, 81)
+  (6, 8, 18, 4, 16, 0, 16)
+  (5, 5, 7, 15, 225, 16, 241)
+  (5, 6, 12, 10, 100, 0, 100)
+  (5, 7, 21, 1, 1, 0, 1)
+  (4, 4, 8, 14, 196, 1, 197)
+  (4, 5, 16, 6, 36, 16, 52)
+  (4, 6, 21, 1, 1, 0, 1)
+  (3, 3, 7, 15, 225, 1, 226)
+  (3, 4, 16, 6, 36, 1, 37)
+  (2, 2, 7, 15, 225, 37, 262)
+  (2, 3, 15, 7, 49, 1, 50)
+  (1, 1, 11, 11, 121, 50, 171)
+  (1, 2, 19, 3, 9, 37, 46)
+  (0, 0, 7, 15, 225, 46, 271)
+  (0, 1, 19, 3, 9, 50, 59)
+Chosen lines:
+  Line 1: Dynamic programming | unused=3 | penalty=9
+  Line 2: creates optimal | unused=7 | penalty=49
+  Line 3: document layouts with | unused=1 | penalty=1
+  Line 4: balanced line spacing | unused=1 | penalty=0
+Minimum total penalty: 59
+------------------------------------------------------------
+INPUT width=30; words=['Dynamic', 'programming', 'creates', 'optimal', 'document', 'layouts', 'with', 'balanced', 'line', 'spacing']
+DP states (dp[i] = minimum penalty from word i to end):
+  dp[0]=10
+  dp[1]=9
+  dp[2]=52
+  dp[3]=1
+  dp[4]=0
+  dp[5]=16
+  dp[6]=0
+  dp[7]=0
+  dp[8]=0
+  dp[9]=0
+  dp[10]=0
+Candidate transitions (i,j,used,slack,linePenalty,tail,candidate):
+  (9, 9, 7, 23, 0, 0, 0)
+  (8, 8, 4, 26, 676, 0, 676)
+  (8, 9, 12, 18, 0, 0, 0)
+  (7, 7, 8, 22, 484, 0, 484)
+  (7, 8, 13, 17, 289, 0, 289)
+  (7, 9, 21, 9, 0, 0, 0)
+  (6, 6, 4, 26, 676, 0, 676)
+  (6, 7, 13, 17, 289, 0, 289)
+  (6, 8, 18, 12, 144, 0, 144)
+  (6, 9, 26, 4, 0, 0, 0)
+  (5, 5, 7, 23, 529, 0, 529)
+  (5, 6, 12, 18, 324, 0, 324)
+  (5, 7, 21, 9, 81, 0, 81)
+  (5, 8, 26, 4, 16, 0, 16)
+  (4, 4, 8, 22, 484, 16, 500)
+  (4, 5, 16, 14, 196, 0, 196)
+  (4, 6, 21, 9, 81, 0, 81)
+  (4, 7, 30, 0, 0, 0, 0)
+  (3, 3, 7, 23, 529, 0, 529)
+  (3, 4, 16, 14, 196, 16, 212)
+  (3, 5, 24, 6, 36, 0, 36)
+  (3, 6, 29, 1, 1, 0, 1)
+  (2, 2, 7, 23, 529, 1, 530)
+  (2, 3, 15, 15, 225, 0, 225)
+  (2, 4, 24, 6, 36, 16, 52)
+  (1, 1, 11, 19, 361, 52, 413)
+  (1, 2, 19, 11, 121, 1, 122)
+  (1, 3, 27, 3, 9, 0, 9)
+  (0, 0, 7, 23, 529, 9, 538)
+  (0, 1, 19, 11, 121, 52, 173)
+  (0, 2, 27, 3, 9, 1, 10)
+Chosen lines:
+  Line 1: Dynamic programming creates | unused=3 | penalty=9
+  Line 2: optimal document layouts with | unused=1 | penalty=1
+  Line 3: balanced line spacing | unused=9 | penalty=0
+Minimum total penalty: 10
+------------------------------------------------------------
+BOUNDARY: single word longer than width
+INPUT width=5; words=['extraordinary']
+DP states (dp[i] = minimum penalty from word i to end):
+  dp[0]=inf
+  dp[1]=0
+Candidate transitions (i,j,used,slack,linePenalty,tail,candidate):
+FAIL: width too small to fit at least one word.
+
+STDERR:
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 718, in _warm_feature_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 509, in _warm_drawing_and_image_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/generated/interface/models.py", line 32861, in bring_to_front
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/remote.py", line 764, in __call__
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/client.py", line 175, in call
+artifact_tool.rpc.client.RemoteError: Element ordering requires an owning element collection.

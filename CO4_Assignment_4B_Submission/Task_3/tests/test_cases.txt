@@ -1,0 +1,5 @@
+Test cases:
+1) 8-vertex, 13-edge weighted graph from A.
+2) Add negative edge H->A=-3 and compare Bellman-Ford.
+3) Add negative cycle A->B=-2, B->A=-2.
+4) Floyd distance matrix and Warshall reachability.

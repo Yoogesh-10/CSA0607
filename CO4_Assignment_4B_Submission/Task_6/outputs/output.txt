@@ -1,0 +1,31 @@
+COST MATRIX
+[0, 20, 3, 15, 17, 20, 2]
+[8, 0, 16, 28, 17, 28, 10]
+[22, 27, 0, 7, 3, 18, 17]
+[12, 4, 9, 0, 25, 13, 3]
+[15, 29, 6, 21, 0, 13, 14]
+[15, 11, 28, 23, 10, 0, 16]
+[7, 23, 11, 23, 13, 6, 0]
+OPTIMAL ROUTE: [0, 6, 5, 4, 2, 3, 1, 0] cost: 43 states: 299
+VALIDATION 5 vertices: brute force (0, 2, 1, 3, 4, 0) 49 DP [0, 2, 1, 3, 4, 0] 49 MATCH True
+STATE SPACE EXPERIMENT
+n=4 locations incl hub; states=13; time=0.000012s; route=[0, 2, 1, 3, 0]; cost=38; approx DP entries=12
+n=5 locations incl hub; states=43; time=0.000027s; route=[0, 2, 1, 3, 4, 0]; cost=49; approx DP entries=32
+n=6 locations incl hub; states=117; time=0.000094s; route=[0, 2, 4, 3, 5, 1, 0]; cost=45; approx DP entries=80
+n=7 locations incl hub; states=299; time=0.000225s; route=[0, 6, 5, 4, 2, 3, 1, 0]; cost=43; approx DP entries=192
+n=8 locations incl hub; states=750; time=0.000725s; route=[0, 6, 3, 2, 1, 5, 7, 4, 0]; cost=52; approx DP entries=448
+n=9 locations incl hub; states=1977; time=0.001522s; route=[0, 6, 1, 8, 3, 2, 4, 7, 5, 0]; cost=58; approx DP entries=1024
+Boundary: one location (hub only)
+Hub->Hub cost=0
+
+STDERR:
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 718, in _warm_feature_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 509, in _warm_drawing_and_image_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/generated/interface/models.py", line 32861, in bring_to_front
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/remote.py", line 764, in __call__
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/client.py", line 175, in call
+artifact_tool.rpc.client.RemoteError: Element ordering requires an owning element collection.

@@ -1,0 +1,4 @@
+Test cases:
+1) Normal capacity 50, items A(10,60), B(20,100), C(30,120).
+2) Greedy counterexample: same items; ratio greedy 0/1 value 160, DP optimum 220.
+3) Boundary: capacity 0.

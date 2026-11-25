@@ -1,0 +1,5 @@
+Test cases:
+1) TSP with hub and 6 deliveries (7 vertices total).
+2) Validation: 5-vertex small instance compared with brute-force enumeration.
+3) State-space runs for 4 through 9 total vertices.
+4) Boundary: hub only, cost 0.

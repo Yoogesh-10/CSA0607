@@ -1,0 +1,50 @@
+BASE CASE
+Line1: [7, 9, 3, 4, 8, 4] Line2: [8, 5, 6, 4, 5, 7] transfer: [[2, 3, 1, 3, 4], [2, 1, 2, 2, 1]] entry: [2, 4] exit: [3, 2]
+Station 1 costs: 9 12
+Station 2: L1 stay=18 transfer=23 choose=stay; L2 stay=17 transfer=16 choose=transfer
+Station 3: L1 stay=21 transfer=20 choose=transfer; L2 stay=22 transfer=27 choose=stay
+Station 4: L1 stay=24 transfer=28 choose=stay; L2 stay=26 transfer=25 choose=transfer
+Station 5: L1 stay=32 transfer=35 choose=stay; L2 stay=30 transfer=32 choose=stay
+Station 6: L1 stay=36 transfer=35 choose=transfer; L2 stay=37 transfer=43 choose=stay
+Route: ['Line 1', 'Line 2', 'Line 1', 'Line 2', 'Line 2', 'Line 1'] transfer stations: [2, 3, 4, 6]
+Minimum time: 38
+
+TRANSFER CHANGE: t[Line1->Line2 at station 3] increased 1->20
+Line1: [7, 9, 3, 4, 8, 4] Line2: [8, 5, 6, 4, 5, 7] transfer: [[2, 3, 20, 3, 4], [2, 1, 2, 2, 1]] entry: [2, 4] exit: [3, 2]
+Station 1 costs: 9 12
+Station 2: L1 stay=18 transfer=23 choose=stay; L2 stay=17 transfer=16 choose=transfer
+Station 3: L1 stay=21 transfer=20 choose=transfer; L2 stay=22 transfer=27 choose=stay
+Station 4: L1 stay=24 transfer=28 choose=stay; L2 stay=26 transfer=44 choose=stay
+Station 5: L1 stay=32 transfer=36 choose=stay; L2 stay=31 transfer=32 choose=stay
+Station 6: L1 stay=36 transfer=36 choose=stay; L2 stay=38 transfer=43 choose=stay
+Route: ['Line 1', 'Line 2', 'Line 1', 'Line 1', 'Line 1', 'Line 1'] transfer stations: [2, 3]
+Minimum time: 39
+
+DISRUPTION: Line 1 station 4 processing 4->30
+Line1: [7, 9, 3, 30, 8, 4] Line2: [8, 5, 6, 4, 5, 7] transfer: [[2, 3, 1, 3, 4], [2, 1, 2, 2, 1]] entry: [2, 4] exit: [3, 2]
+Station 1 costs: 9 12
+Station 2: L1 stay=18 transfer=23 choose=stay; L2 stay=17 transfer=16 choose=transfer
+Station 3: L1 stay=21 transfer=20 choose=transfer; L2 stay=22 transfer=27 choose=stay
+Station 4: L1 stay=50 transfer=54 choose=stay; L2 stay=26 transfer=25 choose=transfer
+Station 5: L1 stay=58 transfer=35 choose=transfer; L2 stay=30 transfer=58 choose=stay
+Station 6: L1 stay=39 transfer=35 choose=transfer; L2 stay=37 transfer=46 choose=stay
+Route: ['Line 1', 'Line 2', 'Line 1', 'Line 2', 'Line 2', 'Line 1'] transfer stations: [2, 3, 4, 6]
+Minimum time: 38
+
+BOUNDARY: one station
+Line1: [5] Line2: [7] transfer: [[], []] entry: [0, 0] exit: [1, 1]
+Station 1 costs: 5 7
+Route: ['Line 1'] transfer stations: []
+Minimum time: 6
+
+STDERR:
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 718, in _warm_feature_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 509, in _warm_drawing_and_image_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/generated/interface/models.py", line 32861, in bring_to_front
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/remote.py", line 764, in __call__
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/client.py", line 175, in call
+artifact_tool.rpc.client.RemoteError: Element ordering requires an owning element collection.

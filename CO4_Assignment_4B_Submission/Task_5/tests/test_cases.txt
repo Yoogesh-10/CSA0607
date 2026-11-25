@@ -1,0 +1,4 @@
+Test cases:
+1) Same connected 8-vertex graph for Kruskal, Prim, Boruvka.
+2) Equalize selected edge weights to create multiple MST possibilities.
+3) Compare edge selection trace and total cost.

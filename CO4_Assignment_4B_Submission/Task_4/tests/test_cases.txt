@@ -1,0 +1,5 @@
+Test cases:
+1) Six-station two-line assembly case.
+2) Increase transfer time from Line 1 to Line 2 at station 3 from 1 to 20.
+3) Line 1 station 4 processing time 4 to 30.
+4) Boundary: one station.

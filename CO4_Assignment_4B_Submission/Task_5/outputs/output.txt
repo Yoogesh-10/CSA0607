@@ -1,0 +1,26 @@
+BASE GRAPH
+Kruskal construction trace: [('accept', 'B', 'C', 1), ('accept', 'D', 'E', 2), ('accept', 'G', 'H', 2), ('accept', 'A', 'C', 3), ('accept', 'E', 'F', 3), ('reject-cycle', 'A', 'B', 4), ('accept', 'C', 'D', 4), ('accept', 'F', 'G', 4), ('reject-cycle', 'B', 'D', 5), ('reject-cycle', 'C', 'E', 6), ('reject-cycle', 'F', 'H', 6), ('reject-cycle', 'D', 'F', 7), ('reject-cycle', 'E', 'G', 8), ('reject-cycle', 'B', 'H', 9)]
+MST edges: [('B', 'C', 1), ('D', 'E', 2), ('G', 'H', 2), ('A', 'C', 3), ('E', 'F', 3), ('C', 'D', 4), ('F', 'G', 4)] cost: 19
+Prim construction trace: [('A', 'C', 3), ('C', 'B', 1), ('C', 'D', 4), ('D', 'E', 2), ('E', 'F', 3), ('F', 'G', 4), ('G', 'H', 2)]
+MST edges: [('A', 'C', 3), ('C', 'B', 1), ('C', 'D', 4), ('D', 'E', 2), ('E', 'F', 3), ('F', 'G', 4), ('G', 'H', 2)] cost: 19
+Boruvka construction trace: [('A', 'C', 3), ('B', 'C', 1), ('D', 'E', 2), ('E', 'F', 3), ('G', 'H', 2), ('C', 'D', 4), ('F', 'G', 4)]
+MST edges: [('A', 'C', 3), ('B', 'C', 1), ('D', 'E', 2), ('E', 'F', 3), ('G', 'H', 2), ('C', 'D', 4), ('F', 'G', 4)] cost: 19
+
+MULTIPLE MST TEST: change A-C and B-C to equal weight 1
+Kruskal construction trace: [('accept', 'A', 'C', 1), ('accept', 'B', 'C', 1), ('accept', 'D', 'E', 2), ('accept', 'G', 'H', 2), ('accept', 'E', 'F', 3), ('reject-cycle', 'A', 'B', 4), ('accept', 'C', 'D', 4), ('accept', 'F', 'G', 4), ('reject-cycle', 'B', 'D', 5), ('reject-cycle', 'C', 'E', 6), ('reject-cycle', 'F', 'H', 6), ('reject-cycle', 'D', 'F', 7), ('reject-cycle', 'E', 'G', 8), ('reject-cycle', 'B', 'H', 9)]
+MST edges: [('A', 'C', 1), ('B', 'C', 1), ('D', 'E', 2), ('G', 'H', 2), ('E', 'F', 3), ('C', 'D', 4), ('F', 'G', 4)] cost: 17
+Boruvka construction trace: [('A', 'C', 1), ('B', 'C', 1), ('D', 'E', 2), ('E', 'F', 3), ('G', 'H', 2), ('C', 'D', 4), ('F', 'G', 4)]
+MST edges: [('A', 'C', 1), ('B', 'C', 1), ('D', 'E', 2), ('E', 'F', 3), ('G', 'H', 2), ('C', 'D', 4), ('F', 'G', 4)] cost: 17
+Prim: [('A', 'C', 1), ('C', 'B', 1), ('C', 'D', 4), ('D', 'E', 2), ('E', 'F', 3), ('F', 'G', 4), ('G', 'H', 2)]
+
+STDERR:
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 718, in _warm_feature_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 509, in _warm_drawing_and_image_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/generated/interface/models.py", line 32861, in bring_to_front
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/remote.py", line 764, in __call__
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/client.py", line 175, in call
+artifact_tool.rpc.client.RemoteError: Element ordering requires an owning element collection.

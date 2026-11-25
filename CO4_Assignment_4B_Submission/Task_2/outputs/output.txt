@@ -1,0 +1,41 @@
+NORMAL INSTANCE
+Items (ID, weight, value): [('A', 10, 60), ('B', 20, 100), ('C', 30, 120)] capacity= 50
+Fractional greedy decisions:
+  A fraction=1.00 weight=10.00 value=60.00 ratio=6.00
+  B fraction=1.00 weight=20.00 value=100.00 ratio=5.00
+  C fraction=0.67 weight=20.00 value=80.00 ratio=4.00
+Fractional value: 240.0 iterations: 3
+0/1 DP selected: [('B', 20, 100), ('C', 30, 120)] value: 220 DP states: 204
+DP final row: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 180, 180, 180, 180, 180, 180, 180, 180, 180, 180, 220]
+0/1 ratio greedy: [('A', 10, 60), ('B', 20, 100)] value: 160 first commitment: ('A', 10, 60)
+
+GREEDY COUNTEREXAMPLE
+Items (ID, weight, value): [('A', 10, 60), ('B', 20, 100), ('C', 30, 120)] capacity= 50
+Fractional greedy decisions:
+  A fraction=1.00 weight=10.00 value=60.00 ratio=6.00
+  B fraction=1.00 weight=20.00 value=100.00 ratio=5.00
+  C fraction=0.67 weight=20.00 value=80.00 ratio=4.00
+Fractional value: 240.0 iterations: 3
+0/1 DP selected: [('B', 20, 100), ('C', 30, 120)] value: 220 DP states: 204
+DP final row: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 60, 60, 60, 60, 60, 60, 60, 60, 60, 60, 100, 100, 100, 100, 100, 100, 100, 100, 100, 100, 160, 160, 160, 160, 160, 160, 160, 160, 160, 160, 180, 180, 180, 180, 180, 180, 180, 180, 180, 180, 220]
+0/1 ratio greedy: [('A', 10, 60), ('B', 20, 100)] value: 160 first commitment: ('A', 10, 60)
+
+BOUNDARY capacity=0
+Items (ID, weight, value): [('X', 1, 10)] capacity= 0
+Fractional greedy decisions:
+Fractional value: 0 iterations: 1
+0/1 DP selected: [] value: 0 DP states: 2
+DP final row: [0]
+0/1 ratio greedy: [] value: 0 first commitment: None
+
+STDERR:
+Spreadsheet runtime warmup failed during python startup
+Traceback (most recent call last):
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/patches/warm_spreadsheet_runtime_on_startup.py", line 26, in warm_spreadsheet_runtime_on_startup
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 785, in warm_spreadsheet_runtime
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 718, in _warm_feature_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/spreadsheet_warmup.py", line 509, in _warm_drawing_and_image_flows
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/generated/interface/models.py", line 32861, in bring_to_front
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/remote.py", line 764, in __call__
+  File "/tmp/tmp.QlpUkOUI9D/artifact_tool_v2-2.8.66/artifact_tool/rpc/client.py", line 175, in call
+artifact_tool.rpc.client.RemoteError: Element ordering requires an owning element collection.

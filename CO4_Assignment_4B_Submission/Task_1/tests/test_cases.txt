@@ -1,0 +1,4 @@
+Test cases:
+1) Widths 16, 22, 30 on the same paragraph.
+2) Boundary: a word longer than width (extraordinary, width 5).
+Expected: gracefully report infeasible line width.
