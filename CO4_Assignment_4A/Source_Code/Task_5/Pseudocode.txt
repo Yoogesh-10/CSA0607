@@ -1,0 +1,50 @@
+Task 5 - Dijkstra, Bellman-Ford and Floyd pseudocode
+
+ALGORITHM Dijkstra(G, source)
+BEGIN
+    FOR each vertex v DO
+        dist[v] ← ∞
+        pred[v] ← NIL
+        visited[v] ← FALSE
+    END FOR
+    dist[source] ← 0
+    WHILE an unvisited vertex exists DO
+        u ← unvisited vertex with minimum dist[u]
+        IF dist[u] = ∞ THEN BREAK
+        visited[u] ← TRUE
+        FOR each edge (u,v) with weight c DO
+            IF visited[v] = FALSE AND dist[u] + c < dist[v] THEN
+                dist[v] ← dist[u] + c
+                pred[v] ← u
+            END IF
+        END FOR
+    END WHILE
+    RETURN dist, pred
+END
+
+ALGORITHM BellmanFord(G, source)
+BEGIN
+    dist[source] ← 0
+    FOR each other vertex v DO dist[v] ← ∞
+    FOR pass ← 1 TO |V|−1 DO
+        FOR each edge (u,v,w) DO
+            IF dist[u] ≠ ∞ AND dist[u] + w < dist[v] THEN
+                dist[v] ← dist[u] + w
+            END IF
+        END FOR
+    END FOR
+    FOR each edge (u,v,w) DO
+        IF dist[u] ≠ ∞ AND dist[u] + w < dist[v] THEN
+            RETURN "Reachable negative-weight cycle exists"
+        END IF
+    END FOR
+    RETURN dist
+END
+
+FOR k ← 1 TO |V| DO
+    FOR i ← 1 TO |V| DO
+        FOR j ← 1 TO |V| DO
+            D[i][j] ← MIN(D[i][j], D[i][k] + D[k][j])
+        END FOR
+    END FOR
+END FOR

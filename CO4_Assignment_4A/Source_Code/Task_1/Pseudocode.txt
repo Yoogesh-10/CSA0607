@@ -1,0 +1,31 @@
+Task 1 - Fractional Knapsack pseudocode
+
+ALGORITHM FractionalKnapsack(Packages, Capacity)
+INPUT: Packages with weight w[i] and value v[i]; capacity W
+OUTPUT: Selected package fractions and maximum total value
+BEGIN
+    FOR each package i DO
+        ratio[i] ← v[i] / w[i]
+    END FOR
+    SORT packages in descending order of ratio
+    remaining ← W
+    totalValue ← 0
+    selection ← empty
+
+    FOR each package i in sorted order DO
+        IF remaining = 0 THEN
+            BREAK
+        END IF
+        IF w[i] ≤ remaining THEN
+            fraction ← 1
+            remaining ← remaining − w[i]
+            totalValue ← totalValue + v[i]
+        ELSE
+            fraction ← remaining / w[i]
+            totalValue ← totalValue + fraction × v[i]
+            remaining ← 0
+        END IF
+        ADD (i, fraction) to selection
+    END FOR
+    RETURN selection, totalValue
+END

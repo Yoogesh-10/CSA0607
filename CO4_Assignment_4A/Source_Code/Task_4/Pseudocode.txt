@@ -1,0 +1,6 @@
+Task 4 - Word Break minimal repair
+
+IF DP[j] = TRUE AND substring(Text, j, i) is in Dictionary THEN
+    DP[i] ← TRUE
+    BREAK
+END IF

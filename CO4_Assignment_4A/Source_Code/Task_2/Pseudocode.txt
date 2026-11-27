@@ -1,0 +1,25 @@
+Task 2 - Job Sequencing pseudocode
+
+ALGORITHM JobSequencing(Jobs)
+INPUT: Jobs (id, deadline, profit)
+OUTPUT: Schedule and totalProfit
+BEGIN
+    SORT Jobs by descending profit
+    maxDeadline ← maximum deadline among Jobs
+    FOR slot ← 1 TO maxDeadline DO
+        Schedule[slot] ← EMPTY
+    END FOR
+    totalProfit ← 0
+
+    FOR each job j in Jobs DO
+        slot ← MIN(j.deadline, maxDeadline)
+        WHILE slot ≥ 1 AND Schedule[slot] is not EMPTY DO
+            slot ← slot − 1
+        END WHILE
+        IF slot ≥ 1 THEN
+            Schedule[slot] ← j
+            totalProfit ← totalProfit + j.profit
+        END IF
+    END FOR
+    RETURN Schedule, totalProfit
+END

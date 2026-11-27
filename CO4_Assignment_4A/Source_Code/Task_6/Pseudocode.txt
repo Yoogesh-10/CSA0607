@@ -1,0 +1,29 @@
+Task 6 - Weighted Interval Scheduling pseudocode
+
+ALGORITHM WeightedIntervalScheduling(Jobs)
+INPUT: Jobs (id, start, finish, value)
+OUTPUT: Selected jobs and maximum total value
+BEGIN
+    SORT Jobs by ascending finish time
+    FOR i ← 1 TO n DO
+        p[i] ← largest j < i such that finish[j] ≤ start[i]
+        If no such j exists, p[i] ← 0
+    END FOR
+    OPT[0] ← 0
+    FOR i ← 1 TO n DO
+        include ← value[i] + OPT[p[i]]
+        exclude ← OPT[i−1]
+        OPT[i] ← MAX(include, exclude)
+    END FOR
+    selected ← empty
+    i ← n
+    WHILE i > 0 DO
+        IF value[i] + OPT[p[i]] > OPT[i−1] THEN
+            ADD job i to selected
+            i ← p[i]
+        ELSE
+            i ← i − 1
+        END IF
+    END WHILE
+    RETURN selected, OPT[n]
+END

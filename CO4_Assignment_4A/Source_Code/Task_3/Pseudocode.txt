@@ -1,0 +1,30 @@
+Task 3 - 0/1 Knapsack pseudocode
+
+ALGORITHM Knapsack01(Items, W)
+INPUT: n items with weight[i], value[i]; capacity W
+OUTPUT: Maximum value and selected item IDs
+BEGIN
+    CREATE DP[0..n][0..W], initialise all entries to 0
+    FOR i ← 1 TO n DO
+        FOR w ← 1 TO W DO
+            IF weight[i] > w THEN
+                DP[i][w] ← DP[i−1][w]
+            ELSE
+                DP[i][w] ← MAX(DP[i−1][w],
+                    value[i] + DP[i−1][w−weight[i]])
+            END IF
+        END FOR
+    END FOR
+
+    selected ← empty
+    i ← n
+    w ← W
+    WHILE i > 0 AND w > 0 DO
+        IF DP[i][w] ≠ DP[i−1][w] THEN
+            ADD item i to selected
+            w ← w − weight[i]
+        END IF
+        i ← i − 1
+    END WHILE
+    RETURN DP[n][W], selected
+END
